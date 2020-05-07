@@ -1,0 +1,23 @@
+<html>
+<head>
+    {% if title %}
+    <title> {{ title }}</title>
+    {% else %}
+    <title> TITLE</title>
+    {% endif %}
+</head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="{{ url_for('static', filename = 'main1.css') }}">
+<body class="room">
+<div class="container-fluid">
+    {% for booking in booked %}
+             <div class="col-md-5 well" id="a">
+                 <h5 class="category">RoomType: {{ booking.category }}</h5>
+                 <h5>Check In: {{ booking.checkin }}</h5>
+                 <h5>Check Out: {{ booking.checkout }}</h5>
+                 <h5>Name: {{ booking.name }}</h5>
+                 <h5>Phone No: {{ booking.mobno }}</h5>
+             </div>
+    {% endfor %}
+</div>
+</body>

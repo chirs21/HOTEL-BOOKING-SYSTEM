@@ -1,0 +1,23 @@
+<html>
+<head>
+    {% if title %}
+    <title> {{ title }}</title>
+    {% else %}
+    <title> TITLE</title>
+    {% endif %}
+</head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="{{ url_for('static', filename = 'main1.css') }}">
+<body class="room">
+<div class="container-fluid">
+    {% for room in room %}
+        <div class="col-md-5 well">
+            <a href="{{ url_for('book') }}" class="b"><h1>{{ room.category }}</h1></a>
+                <a href="" class="a"><h4>No of beds: {{ room.beds }}</h4></a>
+                <a href="" class="a"><h4>Facilities: {{ room.facilities }}</h4></a>
+                <a href="" class="a"><h4>Rooms Available: {{ room.available }}</h4></a>
+                <a href="" class="a"><h4>Price per night: {{ room.price }} INR/night</h4></a>
+        </div>
+    {% endfor %}
+</div>
+</body>

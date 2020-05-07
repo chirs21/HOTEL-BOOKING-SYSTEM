@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>
+        BOOKING DONE
+    </title>
+</head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href = "{{ url_for('static', filename = 'main1.css') }}">
+<body class="rdirect">
+<div class="row rowr">
+<div class="col-md-4"></div>
+<div class="col-md-4">
+    {% with messages = get_flashed_messages(with_categories = true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        <div class="alert alert-{{ category}}">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+      {% block content %}{% endblock content %}
+</div>
+<div class="col-md-4"></div>
+</div>
+    <center><h2><a href="{{ url_for('home') }}">Back to home</a></h2></center>
+</body>
+</html>

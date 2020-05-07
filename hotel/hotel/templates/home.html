@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+ 	<div class="jumbotron">
+        <div class="slideshow-container">
+            <div class="mySlides fade"><img src="{{ url_for('static', filename = 'img/1.jpg') }}" style="width:100%; height:450px;"></div>
+            <div class="mySlides fade"><img src="{{ url_for('static', filename = 'img/2.jpg') }}" style="width:100%; height:450px;"></div>
+            <div class="mySlides fade"><img src="{{ url_for('static', filename = 'img/3.jpg') }}" style="width:100%; height:450px;"></div>
+            <div class="mySlides fade"><img src="{{ url_for('static', filename = 'img/4.jpg') }}" style="width:100%; height:450px;"></div>
+            <div class="mySlides fade"><img src="{{ url_for('static', filename = 'img/5.jpg') }}" style="width:100%; height:450px;"></div>
+            <div class="mySlides fade"><img src="{{ url_for('static', filename = 'img/6.jpg') }}" style="width:100%; height:450px;"></div>
+        </div>
+	</div>
+</div>
+<script src="{{ url_for('static', filename = 'slide.js') }}"></script>
+{% endblock content %}
